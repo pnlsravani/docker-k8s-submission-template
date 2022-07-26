@@ -1,0 +1,17 @@
+piVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-ingress
+  namespace: yathishl
+spec:
+  rules:
+  - host: yathishl.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Exact  
+        backend:
+          service:
+            name: api-service
+            port: 
+              number: 80
